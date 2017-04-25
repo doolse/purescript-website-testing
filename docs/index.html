@@ -6,7 +6,6 @@
   <title>PureScript</title>
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700" />
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700" />
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -18,24 +17,32 @@
     body {
       background-color: white;
       font-family: 'Roboto';
-      color: #222;
+      color: rgb(77, 77, 77);
       margin: 0;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     h1, h2, h3 {
-      font-family: 'Roboto Slab';
+      font-family: 'Roboto';
+      color: rgb(17, 17, 17);
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 26px;
+      margin-bottom: 20px;
     }
 
     body > * {
       padding: 10px;
     }
 
-    h1 {
-      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    h2, h3 {
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 15px;
+      font-weight: bold;
     }
 
     a, a:visited, a:active {
@@ -80,31 +87,12 @@
     }
 
     .frame-ctr {
-      height: 220px;
+      /*height: 220px;*/
     }
 
     .frame {
-      border: 3px solid white;
-      box-shadow: 0 0 5px;
-      width: 80%;
-      margin-top: 3%;
-    }
-
-    @keyframes expand {
-      0% {
-        width: 80%;
-        margin-top: 3%;
-      }
-      100% {
-        width: 90%;
-        margin-top: 0;
-      }
-    }
-
-    .frame:hover {
-      width: 90%;
-      margin-top: 0;
-      animation: expand 0.5s;
+      border: 8px solid rgba(0, 0, 0, 0.05);
+      width: 100%;
     }
 
     .container {
@@ -114,74 +102,90 @@
     .very-dark {
       background-color: #1d222d;
       color: white;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     .dark {
       background-color: rgba(0, 0, 0, 0.05);
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      padding: 15px 0;
+    }
+
+    header img {
+      width: 350px;
+      float: left;
+    }
+
+    header p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #fff;
+      opacity: 0.75;
+      float: right;
+      margin-top: 22px;
+    }
+
+    footer a {
+      color: #fff;
     }
   </style>
 </head>
 
 <body>
-  <section class="very-dark">
+  <header class="very-dark">
     <div class="container">
-      <p class="text-center">
-        <img src="img/logo.png">
-      </p>
-      <h1 class="text-center">PureScript</h1>
-      <hr>
-      <h2 class="lead text-center">A small, strongly-typed, functional programming language that compiles to JavaScript.</h2>
+      <img src="img/logo.svg" alt="PureScript">
+      <p>A strongly typed functional programming language that compiles to JavaScript.</p>
     </div>
-  </section>
+  </header>
   <section>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h3 class="text-center">Browser</h3>
+          <h2 class="text-center">Browser</h2>
           <p class="text-center frame-ctr">
             <a href="https://github.com/quephird/space-invaders-ps">
               <img src="img/invaders.png" class="frame">
             </a>
           </p>
-          <p class="text-center"><small>(<a href="https://github.com/quephird/space-invaders-ps">space-invaders-ps</a> by @quephird)</small></p>
-          <p class="text-center">PureScript provides bindings to the web APIs available in the browser,
+          <p><small><a href="https://github.com/quephird/space-invaders-ps">space-invaders-ps</a> by @quephird</small></p>
+          <p>PureScript provides bindings to the web APIs available in the browser,
           making it an excellent choice for developing part or all of a traditional
           web application.</p>
         </div>
         <div class="col-md-3">
-          <h3 class="text-center">Node</h3>
+          <h2 class="text-center">Server</h2>
           <p class="text-center frame-ctr">
             <a href="https://hyper.wickstrom.tech/">
               <img src="img/hyper.png" class="frame">
             </a>
           </p>
-          <p class="text-center"><small>(<a href="https://hyper.wickstrom.tech/">Hyper</a> by @owickstrom)</small></p>
-          <p class="text-center">PureScript can run server-side on NodeJS, or in any JavaScript environment which supports the
+          <p><small><a href="https://hyper.wickstrom.tech/">Hyper</a> by @owickstrom</small></p>
+          <p>PureScript can run server-side on NodeJS, or in any JavaScript environment which supports the
           CommonJS module standard. You can write both client and server in PureScript, and share code between the two.</p>
         </div>
         <div class="col-md-3">
-          <h3 class="text-center">Cross-Platform</h3>
+          <h2 class="text-center">Apps</h2>
           <p class="text-center frame-ctr">
             <a href="https://github.com/doolse/purescript-reactnative">
               <img src="img/native.png" class="frame">
             </a>
           </p>
-          <p class="text-center"><small>(<a href="https://github.com/doolse/purescript-reactnative">React Native bindings</a> by @doolse)</small></p>
-          <p class="text-center">PureScript works well with JavaScript-based tools such as <a href="https://facebook.github.io/react-native/">React Native</a>
+          <p><small><a href="https://github.com/doolse/purescript-reactnative">React Native bindings</a> by @doolse</small></p>
+          <p>PureScript works well with JavaScript-based tools such as <a href="https://facebook.github.io/react-native/">React Native</a>
           or <a href="https://electron.atom.io/">Electron</a>, which makes it possible to develop cross-platform applications using all of the expressive power
           that comes with using PureScript.</p>
         </div>
         <div class="col-md-3">
-          <h3 class="text-center">And More!</h3>
+          <h2 class="text-center">And More!</h2>
           <p class="text-center frame-ctr">
             <a href="https://github.com/pure11/pure11/">
               <img src="img/pure11.png" class="frame">
             </a>
           </p>
-          <p class="text-center"><small>(<a href="https://github.com/pure11/pure11/">pure11</a> by @andyarvanitis)</small></p>
-          <p class="text-center">PureScript is not limited to just JavaScript! Alternative backends exist for C++11 and Erlang,
+          <p><small><a href="https://github.com/pure11/pure11/">pure11</a> by @andyarvanitis</small></p>
+          <p>PureScript is not limited to just JavaScript! Alternative backends exist for C++11 and Erlang,
           and the PureScript compiler is built with extensibility in mind, so you can target your favorite language easily.</p>
         </div>
       </div>
@@ -189,8 +193,6 @@
   </section>
   <section class="dark">
     <div class="container">
-      <h2 class="text-center">Examples</h2>
-
       <div class="row">
         <div class="col-md-6">
           <h3>Hello, DOM!</h3>
@@ -245,9 +247,9 @@
           <pre><span class="kr">import</span> <span class="nn">Test.QuickCheck</span>
 
 <span class="nf">main</span> = <span class="kr">do</span>
-  quickCheck $ <span class="nf">\</span>xs ys -&gt;
+  quickCheck <span class="nf">\</span>xs ys -&gt;
     isSorted $ merge (sort xs) (sort ys)
-  quickCheck $ <span class="nf">\</span>xs ys -&gt;
+  quickCheck <span class="nf">\</span>xs ys -&gt;
     xs `isSubarrayOf` merge xs ys</pre>
         </div>
       </div>
@@ -280,19 +282,19 @@
   </section>
   <section class="dark">
     <div class="container">
-      <h2 class="text-center">Learn More</h2>
+      <h2 class="text-center">Learn more</h2>
 
       <p class="text-center">To learn more about the PureScript language and community, visit the <a href="https://github.com/purescript/documentation">documentation repository</a> on GitHub, where you can find articles,
       tutorials, and more.</p>
     </div>
   </section>
-  <div class="container">
+  <footer class="very-dark">
     <h2 class="text-center">
       <a href="https://github.com/purescript/purescript"><i class="fa fa-github-square"></i></a>
       <a href="https://twitter.com/purescript"><i class="fa fa-twitter-square"></i></a>
     </h2>
     <p class="text-center text-muted"><small>&copy; PureScript 2017</small></p>
-  </div>
+  </footer>
 
 </body>
 
